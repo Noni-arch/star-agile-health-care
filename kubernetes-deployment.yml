@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: medicure
-        image: noni64/medicure:latest
+        image: noni64/project2:latest
         ports:
         - containerPort: 8082
 ---
