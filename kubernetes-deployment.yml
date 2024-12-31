@@ -23,7 +23,7 @@ kind: Service
 metadata:
   name: medicure-service
 spec:
-  type: LoadBalancer  # This tells Kubernetes to expose the service via a load balancer
+  type: NodePort  
   ports:
   - port: 8082           # The port that will be exposed externally
     targetPort: 8082      # The port the container is listening on
