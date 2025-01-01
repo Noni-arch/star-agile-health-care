@@ -1,4 +1,3 @@
-apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: medicure
@@ -14,16 +13,17 @@ spec:
     spec:
       containers:
       - name: medicure
-        image: noni64/project2:2
+        image: 025066243934.dkr.ecr.us-west-1.amazonaws.com/noni:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8082
+      imagePullSecrets:
+      - name: ecr-secret
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: medicure-service
-spec:
   type: NodePort  
   ports:
   - port: 8082           # The port that will be exposed externally
